@@ -4,22 +4,30 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-
-
-
-
+	/**/
 
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 
 	.top-menu
-		display: none
+	  display: none
+	  max-width: 340px
+	  float: right
+	  ul
+	  	li
+	  	  display: block !important
+
+
+	.logo
+	  float: right
+
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	
+
+
 	/*Disable Animation on Mobile Devices*/
 	.animated
 		/*CSS transitions*/
@@ -40,7 +48,6 @@
 		-o-animation: none !important
 		-ms-animation: none !important
 		animation: none !important
-
 
 
 
@@ -71,15 +78,14 @@
 @media only screen and (min-width : 768px)
 	/**/
 
-.social
-	padding: 0
-	float: right
-	li
-		margin-left: 10px !important
+	.social
+		padding: 0
+		li
+		  margin-left: 10px !important
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px)
-
+	/**/
 
 
 

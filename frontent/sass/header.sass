@@ -52,35 +52,43 @@ a:hover, a:focus, a:active
   height: 60px
   background-color: #2b2a30
   opacity: .9
+  .top-menu
+    font-size: em(16px)
+    ul
+      @extend .ul-menu
+    li
+      line-height: 60px
+      padding: 0 20px
+      &.active
+        a
+          color: $main-color
+    a
+      text-decoration: none
+      color: #fff
+      @include transition(all .3s ease)
+    a:hover
+      color: $main-color
+    a:active,a:focus
+      color: #2d7fc3
 
+  ul.social
+    li
+      display: inline-block
+      margin-left: 20px
+      cursor: pointer
 
-.top-menu
-  font-size: em(16px)
-  ul
-    @extend .ul-menu
-  li
+  .toggle-menu
+    display: block
+    float: right
+    position: absolute
+    top: 0
+    right: 0
+    width: 38px
+    height: 22px
+    text-align: center
     line-height: 60px
-    padding: 0 20px
-    &.active
-      a
-        color: $main-color
-  a
-    text-decoration: none
-    color: #fff
-    @include transition(all .3s ease)
-  a:hover
-    color: $main-color
-  a:active,a:focus
-    color: #2d7fc3
-
-ul.social
-  li
-    display: inline-block
-    margin-left: 20px
-    cursor: pointer
 
 
-    
 .vk
   width: 31px
   height: 31px
@@ -93,6 +101,59 @@ ul.social
   width: 31px
   height: 31px
   background-image: url("img/icon/icon-tvi.png")
+
+
+
+/* Toggle Menu */
+.toggle-menu
+  display: block
+  width: 28px
+  height: 30px
+  margin: 28px auto 0
+  outline: none
+
+
+.toggle-menu span:after,
+.toggle-menu span:before
+  content: ""
+  position: absolute
+  left: 0
+  top: -9px
+
+
+.toggle-menu span:after
+  top: 9px
+
+.toggle-menu span
+  position: relative
+  display: block
+
+
+.toggle-menu span,
+.toggle-menu span:after,
+.toggle-menu span:before
+  width: 100%
+  height: 3px
+  background-color: #fff
+  transition: all 0.3s
+  backface-visibility: hidden
+  border-radius: 2px
+
+
+/* on activation */
+.toggle-menu.on span
+  background-color: transparent
+
+.toggle-menu.on span:before
+  transform: rotate(45deg) translate(5px, 5px)
+
+.toggle-menu.on span:after
+  transform: rotate(-45deg) translate(7px, -8px)
+
+.toggle-menu.on + #menu
+  opacity: 1
+  visibility: visible
+
 
 
 
