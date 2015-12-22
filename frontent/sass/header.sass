@@ -38,9 +38,11 @@ a:hover, a:focus, a:active
 
 .main-head
   min-height: 700px
+  height: 100vh /* высота секции равна высоте области просмотра */
   background-size: cover
   background-position: center
   position: relative
+  padding-bottom: 150px
   &::before
 	  @extend .before
 	  background-color: #282828
@@ -52,6 +54,17 @@ a:hover, a:focus, a:active
   height: 60px
   background-color: #2b2a30
   opacity: .9
+  .logo
+    font-weight: 600
+    font-size: em(20px)
+    line-height: 60px
+    text-decoration: none
+    @include transition(all .3s ease)
+    &:hover
+      font-size: em(21px)
+    span
+      color: #fff
+
   .top-menu
     font-size: em(16px)
     ul
@@ -72,20 +85,14 @@ a:hover, a:focus, a:active
       color: #2d7fc3
 
   ul.social
+    float: left
     li
       display: inline-block
       margin-left: 20px
       cursor: pointer
 
   .toggle-menu
-    display: block
     float: right
-    position: absolute
-    top: 0
-    right: 0
-    width: 38px
-    height: 22px
-    text-align: center
     line-height: 60px
 
 
@@ -150,27 +157,34 @@ a:hover, a:focus, a:active
 .toggle-menu.on span:after
   transform: rotate(-45deg) translate(7px, -8px)
 
-.toggle-menu.on + #menu
-  opacity: 1
-  visibility: visible
-
-
-
 
 .header_wrap
     margin-top: 100px
-    .hi-title
-        h1
-            color: #fff
-            font-size: em(45px)
-            line-height: 70px
-            text-align: center
-            span
-                background-color: $main-color
-                color: #2E2E2F
-                padding: 0 4px 5px 4px
+.hi-title
+    h1
+        color: #fff
+        font-size: em(45px)
+        line-height: 70px
+        text-align: center
+        span
+            background-color: $main-color
+            color: #2E2E2F
+            padding: 0 4px 5px 4px
 
 
+
+.button-wrap
+    text-align: center
+
+
+.arrow_down
+    display: inline-block
+    width: 40px
+    height: 40px
+    background-image: url("img/icon/arrow_down.png")
+    position: absolute
+    bottom: 40px
+    cursor: pointer
 
 
 
